@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Semyung</title>
+<style>
+	.wrap {
+		border: 1px solid black;
+		width: 470px;
+		margin:0;
+		padding:0;
+	}
+	.box1, .box2, .box3 {
+		border-bottom: 1px solid black;
+	}
+	.box2 {
+		margin:0;
+	}
+	.box1 > img {
+		width: 100px;
+		height: 100px;
+		border-radius: 100px;
+	}
+
+	td:not(:last-child){
+		border-right: 1px solid black;
+		padding-right: 40px;
+	}
+	a{
+		padding-left: 40px;
+	
+	}
+	#t1, #t3 {
+		text-align: center;
+		padding: 17px;
+		border: 1px solid black;
+		width: 50px;
+		margin: 20px;
+		border-radius: 30px;
+		background-color: yellow; 
+	}
+	#t2, #t4 {
+		text-align:center;
+		padding: 17px;
+		border: 1px solid black;
+		width: 50px;
+		margin-left: 360px;
+		border-radius: 30px;
+		background-color: yellow; 
+	}
+	#t5 {
+		text-align: center;
+	}
+	
+	.box4 {
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="box1">
+		<img src="./alpha.jpg">
+	</div>
+	
+	<div class="box2">
+		<table>
+			<tr>
+				<td>
+					 <a  href="#">1</a>
+				</td>
+				<td>
+					<a  href="#">2</a>
+				</td>
+				<td>
+					<a  href="#">3</a>
+				</td>
+				<td>
+					<a  href="#">4</a>
+				</td>
+				<td>
+					<a  href="#">5</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="box3">
+		<h4 id="t1">안녕</h4>
+		<h4 id="t2">반가워</h4>
+		<h4 id="t3">고마워</h4>
+		<h4 id="t4">미안해</h4>
+		<h4 id="t5">대화가 종료되었습니다.</h4>
+	</div>
+	
+	<div class="box4">
+		20112 이건주
+	</div>
+</div>
+</body>
+</html>
