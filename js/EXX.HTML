@@ -2,20 +2,16 @@
     <script>
         // 배경을 붉은색으로 변경하기
 document.body.style.background = "red";
-let i=0;
+
 // 1초 후 원상태로 복구하기
-while(true){
-    if(i<10){
-setTimeout(() => document.body.style.background = "yellow", 1000);
-setTimeout(() => document.body.style.background = "orange", 2000);
-setTimeout(() => document.body.style.background = "green", 3000);
-setTimeout(() => document.body.style.background = "purple", 4000);
-setTimeout(() => document.body.style.background = "blue", 5000);
+setTimeout(() => document.body.style.background = "", 10);
+setInterval(() => document.body.style.background = "yellow", 20);
+setInterval(() => document.body.style.background = "orange", 30);
+setInterval(() => document.body.style.background = "green", 40);
+setInterval(() => document.body.style.background = "purple", 50);
+setInterval(() => document.body.style.background = "blue", 60);
         
-    }else{
-        break;
-    }
-    i++;
-}
+alert(`${navigator.userAgent},${navigator.platform}`);
+
     </script>
 </body>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>사슴에 관하여</title>
+</head>
+<body>
+  사슴에 관한 진실.
+</body>
+    <input type="text" id="color1">
+    <input type="text" id="color2">
+    <input type="text" id="color3">
+    <input type="button" value="change!" onclick="backgroundColorChangeToColorTextInput()">
+  <script>
+
+            function backgroundColorChangeToColorTextInput(){
+                let typedColor1 = document.getElementById("color1");
+                setInterval(() => document.body.style.background = typedColor1.value,1000);
+                let typedColor2 = document.getElementById("color2");
+                setInterval(() => document.body.style.background = typedColor2.value,2000);       
+                let typedColor3 = document.getElementById("color3");
+                setInterval(() => document.body.style.background = typedColor3.value,3000);
+            }
+
+  </script>
+  <a>
+      사슴은 아름다운 동물입니다
+  </a>
+</html>
