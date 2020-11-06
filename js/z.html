@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>회원가입</title>
+    </head>
+
+    <body>
+       
+        <div class="wrap">
+            <h2>회원가입</h1>
+                <p>이름</p>
+                <input type="text" minlength="2" maxlength="10">
+                <p>아이디</p>
+                <input type="text">
+                <p>비밀번호</p>
+                <input type="password" minlength="8" id="PASSWORD">
+                <p>주민등록번호</p>
+                <input type="text" maxlength="6"> - <input type="text" maxlength="1" value="*******">
+        </div>
+                <script>
+                    const word1 = '?';
+                    const word2 = '!'; 
+                    const word3 = '@'; 
+                    const word4 = '_';   
+                    
+                    let password = document.getElementById("PASSWORD");
+
+                    if(password.includes(word1)===false){
+                        alert("비밀번호에 특수문자를 포함해야합니다.");
+                    } else if (password.includes(word2)===false){
+                        alert("비밀번호에 특수문자를 포함해야합니다.");                      
+                    } else if (password.includes(word3)===false){
+                        alert("비밀번호에 특수문자를 포함해야합니다.");                      
+                    } else if (password.includes(word4)===false){
+                        alert("비밀번호에 특수문자를 포함해야합니다.");                      
+                    }
+                </script>
+    </body>
+</html>
