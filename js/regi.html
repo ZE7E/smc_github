@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>회원가입</title>
+  </head>
+
+  <body>
+    <p>이름</p>
+    <input type="text" id="namee" />
+    <p>아이디</p>
+    <input type="text" id="id" />
+    <p>비밀번호</p>
+    <input type="password" id="password" />
+    <p>주민등록번호</p>
+    <input type="text" id="registerNumber1" /> -
+    <input type="text" id="registerNumber2" />
+
+    <input type="button" value="완료" onclick="validation_check()" />
+    <input type="button" value="다시쓰기" onclick="reset()" />
+
+    <script>
+      function validation_check() {
+        const namee = document.getElementById('namee').value;
+        if (2 > namee.length || namee.length > 10) {
+          alert('이름은 2~10 글자 사이어야만 합니다');
+          return false;
+        }
+
+        const password = document.getElementById('password').value;
+        if (!isIncludeSpecialCharacters(password) || password.length < 8) {
+          alert(
+            '비밀번호는 특수문자 ?!@_ 중 하나를 포함하여야 하고, 8글자 이상이어야 합니다'
+          );
+          return false;
+        }
+
+        const preRegistrationNumber = document.getElementById('registerNumber1')
+          .value;
+        const postRegistrationNumber = document.getElementById(
+          'registerNumber2'
+        ).value;
+
+        if (
+          preRegistrationNumber.length !== 6 ||
+          postRegistrationNumber.length !== 1 ||
+          isNaN(postRegistrationNumber) ||
+          isNaN(preRegistrationNumber)
+        ) {
+          alert(
+            '주민등록번호의 첫번째 박스는 6글자여야 하고, 두번째 박스는 1글자여야 합니다'
+          );
+          return false;
+        }
+
+        alert('회원가입에 성공하였습니다!');
+        return true;
+      }
+
+      function isIncludeSpecialCharacters(password, special_characters) {
+        for (const special_character of special_characters) {
+          if (password.includes(special_character)) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      function reset() {
+        let resetButton = document.querySelectorAll('input');
+
+        for (let i = 0; i < 5; i++) {
+          resetButton[i].value = '';
+        }
+      }
+    </script>
+  </body>
+</html>

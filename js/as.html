@@ -1,0 +1,65 @@
+<html>
+  <body>
+    <p>이름</p>
+    <input type="text" id="name" />
+    <p>이메일</p>
+    <input type="text" id="email" />
+    <p>제목</p>
+    <input type="text" id="title" />
+    <p>설명</p>
+    <input type="text" id="description" />
+
+    <input type="button" value="제출" onclick="submit()" />
+    <input type="button" value="다시쓰기" onclick="reset()" />
+
+    <script>
+      function submit() {
+        const name = document.getElementById('name').value;
+        if (2 > name.length || name.length > 10) {
+          alert('이름은 2~10 글자 사이어야만 합니다');
+          return false;
+        }
+
+        const email = document.getElementById('email').value;
+        if (!isIncludeSpecialCharacters1(email)) {
+          alert('이메일에 @가 포함되어야 합니다');
+          return false;
+        }
+
+        if (email.indexOf('@') !== email.lastIndexOf('@')) {
+          alert('@는 하나만 써주십시오');
+          return false;
+        }
+
+        const title = document.getElementById('title').value;
+        if (!isIncludeSpecialCharacters2(title)) {
+          alert('[분류] 제목명 과 같은 포멧으로 작성하여야 합니다');
+          return false;
+        }
+        let bunryu = title.split(']');
+        alert(bunryu[0] + ']');
+
+        const description = document.getElementById('description').value;
+        if (100 < description.length) {
+          alert('설명은 100글자 이내로 작성해주십시오');
+          return false;
+        }
+      }
+
+      function isIncludeSpecialCharacters1(email) {
+        return email.includes('@');
+      }
+
+      function isIncludeSpecialCharacters2(title) {
+        return title.includes('[') && title.includes(']');
+      }
+
+      function reset() {
+        let resetButton = document.querySelectorAll('input[type=text]');
+        for (let i = 0; i < resetButton.length; i++) {
+          resetButton[i].value = '';
+        }
+      }
+    </script>
+  </body>
+</html>
