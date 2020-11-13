@@ -194,3 +194,10 @@ WHERE
 GROUP BY
     CATEGORY_ID;
 
+-- 구문의 순서
+-- SELECT
+-- FROM
+-- WHERE
+-- GROUP BY
+-- HAVING
+-- ORDER BY
